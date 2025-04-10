@@ -6,16 +6,22 @@ use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('front.index');
-})->name('home');
+    return redirect('pt');
+});
 
-Route::view('dashboard', 'dashboard')
+Route::prefix('{lang}')->where(['lang' => 'pt'])->group(function () {
+    Route::get('', function () {
+        return view('front.index');
+    })->name('home');
+});
+
+
+Route::view('dashboard', 'pages.dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
-
     Route::get('settings/profile', Profile::class)->name('settings.profile');
     Route::get('settings/password', Password::class)->name('settings.password');
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
