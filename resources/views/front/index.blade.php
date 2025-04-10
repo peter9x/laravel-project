@@ -1,0 +1,1 @@
+<flux:badge color="lime">New</flux:badge>
