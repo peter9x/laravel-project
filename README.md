@@ -41,14 +41,30 @@ resources/views/
 │   ├── dashboard.blade.php
 │
 │── partials/
-│   ├── home.blade.php
-│   ├── about.blade.php
-│   ├── contact.blade.php
+│   │── front/
+│   │   
+│   ├── head.blade.php
+│   ├── settings-heading.blade.php
+
 ```
 
-## Explanation of Directories
+### Explanation of Directories
 
-### 1. `components/layouts/front/`
-Livewire layouts are stored under the `components.layouts.front` directory:
-- `simple.blade.php`: A simple front-end layout.
-- `master.blade.php`: A master template used for multiple pages.
+#### 1. `components/layouts/`
+Livewire layouts for Back and Front Office layouts
+
+#### 2. `pages/`
+Livewire Back Office pages
+
+#### 3. `partials/`
+Livewire Back Office Partials
+
+#### 4. `components/layouts/front/`
+Livewire Front Office layouts
+
+#### 5. `front/`
+Livewire Front Office Pages
+
+#### 6. `partials/front/`
+Livewire Front Office Partials
+
